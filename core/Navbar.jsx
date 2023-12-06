@@ -105,17 +105,17 @@ export default function Navbar() {
               {!auth.isAuthenticated() && (
                 <span>
                   <Link to="/signup">
-                    <button style={{ color: "black" }}>Sign up</button>
+                    <button style={{ border: "none", color: "white", backgroundColor: "#1d1d1d" }}>Sign up</button>
                   </Link>
                   <Link to="/login">
-                    <button style={{ color: "black" }}>Sign In</button>
+                    <button style={{ border: "none", color: "white", backgroundColor: "#1d1d1d" }}>Sign In</button>
                   </Link>
                 </span>
               )}
               {auth.isAuthenticated() && (
                 <span>
                   <button
-                    style={{ color: "white" }}
+                   style={{ border: "none", color: "white", backgroundColor: "#1d1d1d" }}
                     onClick={() => navigate("/update")}
                   >
                     {values.name == ""
@@ -124,9 +124,9 @@ export default function Navbar() {
                   </button>
                   <Link to="/">
                     <button
-                      style={{ color: "black" }}
+                      style={{ border: "none", color: "white", backgroundColor: "#1d1d1d" }}
                       onClick={() => {
-                        auth.clearJWT(() => {
+                        auth.clearJWT(() => { 
                           <Navigate to="/" />;
                           // navigate(0)
                         });
