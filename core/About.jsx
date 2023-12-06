@@ -10,7 +10,7 @@ export default function About(){
             Welcome to Bright Optics!, your premier destination for top-tier optical solutions. Immerse yourself in a world of clarity and style with our carefully curated collection of eyewear, camera lenses, and telescopes. At Bright Optics, we blend innovation and customer satisfaction to provide a seamless shopping experience.
             </p>
 
-            <button className = "button2" type="button">Read More</button>
+            <a href= "https://www.brightvisionoptical.ca/#"><button className = "button2" type="button">Read More</button></a>
 
         </div>
         

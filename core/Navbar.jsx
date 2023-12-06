@@ -95,11 +95,11 @@ return (
               {
         !auth.isAuthenticated() && (<span>
           <Link to="/signup">
-            <button style={{"color":"white"}}>Sign up
+            <button style={{"color":"black"}}>Sign up
             </button>
           </Link>
           <Link to="/login">
-            <button style={{"color":"white"}}>Sign In
+            <button style={{"color":"black"}}>Sign In
             </button>
           </Link>
         </span>)
