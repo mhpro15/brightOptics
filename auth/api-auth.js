@@ -1,98 +1,115 @@
 const signin = async (user) => {
   try {
-    let response = await fetch('https://enigmatic-brook-63235-c61c5ac34ccc.herokuapp.com/api/auth/signin/', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      credentials: 'include',
-      body: JSON.stringify(user)
-    })
-    console.log("res: "+ response.status)
-    return await response.json()
-  } catch(err) {
-    console.log("Error: "+err)
+    let response = await fetch(
+      "https://enigmatic-brook-63235-c61c5ac34ccc.herokuapp.com/api/auth/signin/",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(user),
+      }
+    );
+    console.log("res: " + response.status);
+    return await response.json();
+  } catch (err) {
+    console.log("Error: " + err);
   }
-}
+};
 
 const signout = async () => {
   try {
-    let response = await fetch('https://enigmatic-brook-63235-c61c5ac34ccc.herokuapp.com/api/auth/signout/', { method: 'GET' })
-    return await response.json()
-  } catch(err) {
-    console.log(err)
+    let response = await fetch(
+      "https://enigmatic-brook-63235-c61c5ac34ccc.herokuapp.com/api/auth/signout/",
+      { method: "GET" }
+    );
+    return await response.json();
+  } catch (err) {
+    console.log(err);
   }
-}
+};
 
 const signup = async (user) => {
   try {
-      let response = await fetch('https://enigmatic-brook-63235-c61c5ac34ccc.herokuapp.com/api/users/', {
-        method: 'POST',
+    let response = await fetch(
+      "https://enigmatic-brook-63235-c61c5ac34ccc.herokuapp.com/api/users/",
+      {
+        method: "POST",
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(user)
-      })
-    return await response.json()
-  } catch(err) {
-    console.log(err)
+        body: JSON.stringify(user),
+      }
+    );
+    return await response.json();
+  } catch (err) {
+    console.log(err);
   }
-}
+};
 
 const update = async (params, credentials, user) => {
   try {
-    let response = await fetch('http://localhost:3001/api/users/' + params.userId, {
-      method: 'PUT',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + credentials.t
-      },
-      body: JSON.stringify(user)
-    })
-    return await response.json()
-  } catch(err) {
-    console.log(err)
+    let response = await fetch(
+      "https://enigmatic-brook-63235-c61c5ac34ccc.herokuapp.com/api/users/" +
+        params.userId,
+      {
+        method: "PUT",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + credentials.t,
+        },
+        body: JSON.stringify(user),
+      }
+    );
+    return await response.json();
+  } catch (err) {
+    console.log(err);
   }
-}
+};
 
 const deleteUser = async (params, credentials) => {
   try {
-    let response = await fetch('http://localhost:3001/api/users/' + params.userId, {
-      method: 'DELETE',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + credentials.t
+    let response = await fetch(
+      "https://enigmatic-brook-63235-c61c5ac34ccc.herokuapp.com/api/users/" +
+        params.userId,
+      {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + credentials.t,
+        },
       }
-    })
-    return await response.json()
-  } catch(err) {
-    console.log(err)
+    );
+    return await response.json();
+  } catch (err) {
+    console.log(err);
   }
-}
+};
 
 const read = async (params, credentials, signal) => {
   try {
-    let response = await fetch('http://localhost:3001/api/users/' + params.userId, {
-      method: 'GET',
-      signal: signal,
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + credentials.t
+    let response = await fetch(
+      "https://enigmatic-brook-63235-c61c5ac34ccc.herokuapp.com/api/users/" +
+        params.userId,
+      {
+        method: "GET",
+        signal: signal,
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + credentials.t,
+        },
       }
-    })
-    return await response.json()
-  } catch(err) {
-    console.log(err)
+    );
+    return await response.json();
+  } catch (err) {
+    console.log(err);
   }
-}
+};
 
-export {
-  signin,
-  signout,
-  signup,update, deleteUser, read
-}
+export { signin, signout, signup, update, deleteUser, read };
