@@ -107,7 +107,7 @@ return (
       {
         auth.isAuthenticated() && (<span>
             <button style={{"color":"white"}}  onClick={()=>navigate("/update")}>{values.name}</button>
-            <Link to="/"><button style={{"color":"white"}} onClick={() => {
+            <Link to="/"><button style={{"color":"black"}} onClick={() => {
               auth.clearJWT(()=>{
                 <Navigate to="/"/>
                 // navigate(0)
